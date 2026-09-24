@@ -1,0 +1,39 @@
+<section class="contenedor">
+  @if (loading()) {
+    <div class="alerta info">Cargando información de la película...</div>
+  }
+
+  @if (error()) {
+    <div class="tarjeta-central text-center">
+      <h1 class="error-titulo">Película no encontrada</h1>
+      <p>No se pudo obtener la información. Es posible que el enlace sea incorrecto.</p>
+      <a routerLink="/" class="btn btn-secondary mt-15">← Volver a la cartelera</a>
+    </div>
+  }
+
+  @if (!loading() && !error() && movie()) {
+    <div class="tarjeta-central detalle-grid">
+      
+      <div class="poster-container">
+        @if (movie()!.poster_path) {
+          <img [src]="'https://image.tmdb.org/t/p/w500' + movie()!.poster_path" [alt]="movie()!.title" class="poster-img-grande" />
+        }
+      </div>
+
+      <div class="info-detallada">
+        <h1 class="titulo-pelicula">{{ movie()!.title }}</h1>
+        
+        <div class="badges-row">
+          <span class="badge badge-fecha">📅 {{ movie()!.release_date }}</span>
+          <span class="badge badge-calificacion">⭐ {{ movie()!.vote_average }}/10</span>
+        </div>
+
+        <h3 class="subtitulo">Sinopsis</h3>
+        <p class="descripcion">{{ movie()!.overview || 'No hay descripción disponible para esta película.' }}</p>
+
+        <a routerLink="/" class="btn btn-secondary mt-15">← Volver a películas</a>
+      </div>
+
+    </div>
+  }
+</section>

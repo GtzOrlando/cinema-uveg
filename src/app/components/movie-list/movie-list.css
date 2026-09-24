@@ -1,0 +1,23 @@
+.contenedor { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+.titulo-principal { text-align: center; color: #111827; font-size: 2.2rem; margin-bottom: 40px; }
+.alerta { padding: 15px; border-radius: 6px; text-align: center; font-weight: 600; margin-bottom: 20px; }
+.info { background-color: #e0f2fe; color: #0284c7; border: 1px solid #bae6fd; }
+.error { background-color: #fef2f2; color: #dc2626; border: 1px solid #fecaca; }
+
+.grid-peliculas { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 25px; }
+.tarjeta-pelicula { background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); border: 1px solid #e5e7eb; display: flex; flex-direction: column; transition: transform 0.2s; }
+.tarjeta-pelicula:hover { transform: translateY(-5px); box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); border-color: #3b82f6; }
+
+.poster-box { position: relative; width: 100%; height: 360px; background: #f3f4f6; }
+.poster-img { width: 100%; height: 100%; object-fit: cover; }
+.sin-poster { height: 100%; display: flex; align-items: center; justify-content: center; color: #9ca3af; font-weight: 600; }
+.calificacion-badge { position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.75); color: #fbbf24; padding: 5px 10px; border-radius: 20px; font-weight: bold; font-size: 0.85rem; backdrop-filter: blur(4px); }
+
+.info-pelicula { padding: 20px; display: flex; flex-direction: column; flex: 1; }
+.titulo { font-size: 1.2rem; margin: 0 0 5px 0; color: #1f2937; line-height: 1.3; }
+.fecha { color: #6b7280; font-size: 0.9rem; margin: 0 0 20px 0; }
+
+.btn { padding: 10px 16px; border: none; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 0.9rem; text-decoration: none; text-align: center; transition: background 0.2s; display: block; }
+.btn-primary { background: #2563eb; color: white; }
+.btn-primary:hover { background: #1d4ed8; }
+.mt-auto { margin-top: auto; }

@@ -1,0 +1,34 @@
+.contenedor { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
+.alerta { padding: 15px; border-radius: 6px; text-align: center; font-weight: 600; margin-bottom: 20px; }
+.info { background-color: #e0f2fe; color: #0284c7; border: 1px solid #bae6fd; }
+
+.tarjeta-central { background: white; border-radius: 12px; padding: 30px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); border: 1px solid #e5e7eb; }
+.text-center { text-align: center; }
+.error-titulo { color: #dc2626; margin-top: 0; }
+
+.detalle-grid { display: grid; grid-template-columns: 350px 1fr; gap: 40px; align-items: start; }
+.poster-img-grande { width: 100%; border-radius: 8px; display: block; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); }
+
+.info-detallada { display: flex; flex-direction: column; }
+.titulo-pelicula { margin: 0 0 15px 0; font-size: 2.5rem; color: #111827; line-height: 1.1; }
+
+.badges-row { display: flex; gap: 10px; margin-bottom: 25px; }
+.badge { padding: 6px 12px; border-radius: 20px; font-weight: 600; font-size: 0.9rem; }
+.badge-fecha { background: #f3f4f6; color: #4b5563; }
+.badge-calificacion { background: #fef3c7; color: #d97706; }
+
+.subtitulo { font-size: 1.2rem; color: #374151; margin: 0 0 10px 0; }
+.descripcion { color: #4b5563; line-height: 1.7; font-size: 1.05rem; margin: 0 0 30px 0; }
+
+.btn { padding: 10px 20px; border: none; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 1rem; text-decoration: none; text-align: center; transition: background 0.2s; display: inline-block; }
+.btn-secondary { background: #f3f4f6; color: #374151; }
+.btn-secondary:hover { background: #e5e7eb; }
+.mt-15 { margin-top: auto; align-self: flex-start; }
+
+@media (max-width: 768px) {
+  .detalle-grid { grid-template-columns: 1fr; gap: 25px; }
+  .poster-container { max-width: 300px; margin: 0 auto; }
+  .titulo-pelicula { font-size: 2rem; text-align: center; }
+  .badges-row { justify-content: center; }
+  .mt-15 { align-self: stretch; }
+}

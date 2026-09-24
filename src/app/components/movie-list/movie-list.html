@@ -1,0 +1,36 @@
+<section class="contenedor">
+  <h1 class="titulo-principal">Películas Mejor Valoradas</h1>
+
+  @if (loading()) {
+    <div class="alerta info">Cargando cartelera...</div>
+  }
+
+  @if (error()) {
+    <div class="alerta error">Ocurrió un error al obtener las películas. Verifica tu conexión o API Key.</div>
+  }
+
+  @if (!loading() && !error()) {
+    <div class="grid-peliculas">
+      @for (movie of movies(); track movie.id) {
+        <article class="tarjeta-pelicula">
+          
+          <div class="poster-box">
+            @if (movie.poster_path) {
+              <img [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path" [alt]="movie.title" class="poster-img" />
+            } @else {
+              <div class="sin-poster">Sin imagen</div>
+            }
+            <span class="calificacion-badge">⭐ {{ movie.vote_average | number:'1.1-1' }}</span>
+          </div>
+
+          <div class="info-pelicula">
+            <h2 class="titulo">{{ movie.title }}</h2>
+            <p class="fecha">{{ movie.release_date }}</p>
+            
+            <a [routerLink]="['/movie', movie.id]" class="btn btn-primary mt-auto">Ver detalles</a>
+          </div>
+        </article>
+      }
+    </div>
+  }
+</section>
